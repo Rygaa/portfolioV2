@@ -1,0 +1,115 @@
+
+@import '../1-helpers/fonts.module';
+@import '../1-helpers/colors.module';
+
+.Projects {
+    align-self: center;
+    justify-self: center;
+
+    display: grid;
+    grid-template-rows: min-content min-content min-content;
+    align-content: center;
+    z-index: 2;
+    // width: 40%;
+    width: min(50rem, 90%);
+
+
+}
+
+.Swiper {
+    width: 100%;
+    max-width: 90%;
+
+    display: flex;
+    height: 28.125rem;
+    z-index: 3;
+    pointer-events:none;
+
+}
+
+.Swiper-Slide {
+    display: flex;
+    justify-content: center;
+    height: 25rem;
+    > img {
+        width: 32.75rem;
+        height: 23.289rem;
+        resize: both;
+        // width: 100%;
+        // object-fit: contain;
+    }
+
+}
+.Console {
+    width: 100%;
+    top: -9.375rem;
+    max-height: 22.5rem;
+
+
+    position: relative;
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 10px;
+    // height: calc(100% - 21.875rem);
+    display: grid;
+    grid-template-rows: min-content auto min-content min-content;
+    overflow: hidden;
+    height: calc(100% + 5rem);
+    .line {
+        background-color: $color2;
+        width: 90%;
+        height: 1.25px;
+        justify-self: center;
+        margin-top: 3rem;
+        margin-bottom: 2.5rem;
+        
+    }
+}
+
+.text-container {
+    margin-left: 3rem;
+    overflow-y: scroll;
+    margin-right: 1.75rem;
+    height: 10rem;
+    max-height: 10rem;
+
+    &::-webkit-scrollbar {
+        background-color: $color3;
+        width: .5rem;
+    }
+    &::-webkit-scrollbar-thumb, &::-webkit-scrollbar-track {
+        background-color: $uColor1;
+        border-radius: 50px;
+    }
+    p {
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+}
+
+@mixin basicButton {
+    width: 40%;
+    height: 2.5rem;
+    background: linear-gradient(90deg, rgba(55, 55, 55, 0.15) 0%, rgba(0, 0, 0, 0.15) 100%);
+    border: 1px solid rgba(0, 200, 255, 0.786);
+    // box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    @include fontSubTitle2();
+    margin-bottom: 1.5rem;
+    margin-top: 2.5rem;
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.view-github-button {
+    @include basicButton();
+    margin-left: 2.5rem;
+}
+.view-website-button {
+    @include basicButton();
+    margin-right: 2.5rem;
+}
+

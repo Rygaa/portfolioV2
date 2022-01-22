@@ -1,0 +1,34 @@
+@import '../1-helpers/fonts.module';
+@import '../1-helpers/colors.module';
+
+.Title {
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+    margin-bottom: 4rem;
+}
+
+.Title > img {
+    object-fit: contain;
+    width: 3.438rem;
+    height: 3.438rem;
+}
+
+.Title > div:nth-child(2) {
+    display: grid;
+    grid-template-rows: auto min-content;
+    p {
+        @include fontTitle2();
+        margin-left: 1rem;
+        font-family: Lucida Console;
+        font-weight: normal;
+        display: flex;
+        align-items: center;
+    }
+    div {
+        background-color: $uColor1;
+        width: 12.5rem;
+        height: 1px;
+        margin-left: 3.125rem;
+    }
+}

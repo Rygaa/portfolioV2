@@ -1,0 +1,51 @@
+.swiper-wrapper {
+    height: unset;
+}
+.swiper-pagination {
+    bottom: 2.5rem !important;
+}
+.swiper-pagination-bullet {
+    width: 2rem !important;
+    height: .45rem !important;
+    border-radius: unset !important;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    margin-top: 0% !important;
+    /* top: 0% !important; */
+    top: calc((25rem / 2) - (3rem / 2)) !important;
+    cursor: pointer;
+    pointer-events:all;
+    background-color: rgba(0, 0, 0, .5);
+    width: 3rem;
+    height: 3rem;
+    border-radius: 3.125rem;
+    border: 1px solid transparent;
+    transition: .3s;
+}
+.swiper-button-next:hover, .swiper-button-prev:hover {
+    background-color: rgba(0, 0, 0, .75);
+}
+
+.swiper-button-next::after, .swiper-button-prev::after {
+    font-size: 0px;
+    width: 3rem;
+    height: 3rem;
+    border-radius: inherit;
+    border: 1px solid transparent;
+    background-image: url('../../images/right-arrow.png');
+    background-repeat: no-repeat;
+    background-size: 1.313rem;
+    background-position: center;
+    opacity: .75;
+    transition: .3s;
+}
+
+.swiper-button-next:hover::after, .swiper-button-prev:hover::after {
+    opacity: 1;
+}
+
+.swiper-button-prev::after {
+  transform: scaleX(-1);
+}
+

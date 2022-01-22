@@ -1,0 +1,131 @@
+@import '../1-helpers/_fonts.module.scss';
+@import '../1-helpers/_colors.module.scss';
+
+.Contact {
+    align-self: center;
+    justify-self: center;
+    display: grid;
+    grid-template-rows: min-content min-content min-content min-content min-content;
+    align-content: center;
+    z-index: 2;
+    width: min(30rem, 90%);
+
+
+}
+
+
+
+.name {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3rem;
+    margin-top: 2.5rem;
+    p { @include fontText1(); color: $uColor4; margin-bottom: .75rem; }
+    input { 
+        background-color: transparent;
+        border: none;
+        border-bottom: 2px solid $uColor4;
+        @include fontText1();
+        padding-bottom: .75rem;
+        color: $fontColor2;
+
+        &::placeholder {
+            @include fontText1();
+            color: $uColor3;
+            transition: .25s;
+        }
+        &:focus {
+            outline: none;
+            border-bottom: 2px solid $uColor5;
+
+        }
+        &:focus::placeholder {
+            color: transparent;
+            transition: .15s;
+        }
+    }
+}
+.email {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3rem;
+
+    p { @include fontText1(); color: $uColor4; margin-bottom: .75rem; }
+    input { 
+        background-color: transparent;
+        border: none;
+        border-bottom: 2px solid $uColor4;
+        @include fontText1();
+        padding-bottom: .75rem;
+        color: $fontColor2;
+
+        &::placeholder {
+            @include fontText1();
+            color: $uColor3;
+            transition: .25s;
+        }
+        &:focus {
+            outline: none;
+            border-bottom: 2px solid $uColor5;
+
+        }
+        &:focus::placeholder {
+            color: transparent;
+            transition: .15s;
+        }
+    }
+}
+.message {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4.5rem;
+    p { @include fontText1(); color: $uColor4; }
+    textarea { 
+        background-color: transparent;
+        border: none;
+        border-bottom: 2px solid $uColor4;
+        resize: none;
+        height: 10rem;
+        @include fontText2();
+        color: $fontColor2;
+
+        &::placeholder {
+            @include fontText2();
+            color: $uColor3;
+            transition: .25s;
+        }
+        &:focus {
+            outline: none;
+            border-bottom: 2px solid $uColor5;
+
+        }
+        &:focus::placeholder {
+            color: transparent;
+            transition: .15s;
+        }
+    }
+}
+.send-button {
+    width: 100%;
+    height: 6.25rem;
+    // background: linear-gradient(90deg, #0075ff54 0%, #00f0ff54 100%);
+    background-color: black;
+    background-image: linear-gradient(to right, rgba(#0075ff54, 40%), rgba(#00f0ff54, 40%), rgba(#0075ff54, 50%));
+    // background-image: linear-gradient(to right, rgba(red, 50%), rgba(blue, 50%), rgba(violet, 50%));
+
+    border: none;
+    @include fontText2();
+    cursor: pointer;
+    // outline: 1px solid transparent;
+        transition: 0.5s;
+
+        background-size: 200% auto;
+        border: 1px solid rgba(0, 229, 255, 0.15);
+
+    &:hover {
+        // background: linear-gradient(180deg, rgba(0, 117, 255, 0.33) 0%, rgba(0, 240, 255, 0.33) 100%);
+        background-position: right center; /* change the direction of the change here */
+        border: 1px solid rgba(0, 229, 255, 0.85);
+
+    }
+}

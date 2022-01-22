@@ -1,0 +1,74 @@
+@mixin reset {
+    margin: 0;
+    padding: 0;
+    line-height: unset;
+    font-family: Roboto;
+}
+
+@mixin fontTitle1 {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 3.125rem;
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+    @include reset();
+}
+@mixin fontTitle2 {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2.188rem;
+    letter-spacing: 0.075em;
+    color: #FFFFFF;
+    reset: 0;
+    @include reset();
+
+}
+
+
+@mixin fontSubTitle1 {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.563rem;
+    line-height: 100%;
+    letter-spacing: 0.025em;
+    color: white;
+    @include reset();
+
+}
+@mixin fontSubTitle2 {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.25rem;
+    line-height: 201.69%;
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+    @include reset();
+
+}
+
+
+@mixin fontText1 {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.563rem;
+    line-height: 125%;
+    letter-spacing: 0.05em;
+    color: white;
+    @include reset();
+
+}
+@mixin fontText2 {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.25rem;
+    line-height: 175%;
+    letter-spacing: 0.075em;
+    color: #FFFFFF;
+    @include reset();
+}

@@ -1,0 +1,118 @@
+@import '../1-helpers/colors.module';
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background-color: black;
+}
+
+// .img-background {
+//     position: fixed;
+//     background-image: url('../../images/p8eoav.jpg');
+//     width: 100%;
+//     height: 100%;
+//     z-index: 1;
+//     animation: AnimationName1 40s linear infinite forwards;
+
+// }
+
+.blob1 {
+    width: 50%;
+    height: 75%;
+    position: absolute;
+    top: calc(25% / 2);
+    right: 25%;
+    background-color: rgba(47, 255, 0, .35);
+    filter: blur(200px);
+    animation: AnimationName2 5s linear infinite backwards;
+    animation-fill-mode: backwards;
+    animation-direction: alternate;
+}   
+
+.Layout {
+    width: 100%;
+    height: 400%;
+    display: grid;
+    grid-template-rows: 25% 25% 25% 25%;
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // background-position: 0px 0px;
+    // background-repeat: repeat-x;
+    // animation: animatedBackground 10s linear infinite alternate;
+    animation: AnimationName 10s linear infinite forwards;
+    background: linear-gradient(90deg, rgba(33, 0, 80, 0.5) 0%, rgba(33, 0, 251, 0.5) 100%);
+    // background: linear-gradient(270deg, #00ffbd, #e3ff00);
+    background-size: 400% 400%;
+}
+
+
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+@keyframes AnimationName1 {
+    0%{background-position:0% 0%}
+    100%{background-position:100% 0%}
+}
+@keyframes AnimationName2 {
+    0%{opacity: 0.5;}
+    100%{opacity: 1;}
+}
+
+
+
+
+.backgrounds {
+    position: absolute;
+    width: 100%;
+    height: 400%;
+    display: grid;
+    grid-template-rows: 25% 25% 25% 25%;
+    z-index: 2;
+
+    > div:nth-child(1) {background-color: rgba(#00C2FF, 10%);}
+    > div:nth-child(2) {background-color: rgba(#00C2FF, 25%);}
+    > div:nth-child(3) {background-color: rgba(#00C2FF, 10%);}
+    > div:nth-child(4) {background-color: rgba(#00C2FF, 25%);}
+}
+
+
+@keyframes animatedBackground {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 0;
+  }
+}
+
+
+//  @media screen and (orientation:landscape) and (max-height: 600px) {
+//   .backgrounds {
+//       height: 800%;
+//   }
+//   .Layout {
+//       height: 800%;
+//   }
+//  }
+
+
+
+@media (max-width: 1350px){html {font-size: 15px;}}
+@media (max-width: 1200px){html {font-size: 14px;}}
+@media (max-width: 1050px){html {font-size: 13px;}}
+@media (max-width: 950px){html {font-size: 12px;}}
+@media (max-width: 600px){html {font-size: 11px;}}
+@media (max-width: 400px){html {font-size: 9px;}}
+
+
+
+@media (max-height: 850px) and (min-width: 1200px)  { html { font-size: 14px;}}
+@media (max-height: 750px) and (min-width: 1050px)  { html { font-size: 13px;}}
+@media (max-height: 700px) and (min-width: 950px)   { html { font-size: 12px;}}
+@media (max-height: 650px) and (min-width: 600px)   { html { font-size: 11px;}}
+@media (max-height: 600px) and (min-width: 400px)   { html { font-size: 10px;}}
+@media (max-height: 600px) and (min-width: 400px)   { html { font-size: 9px;}}
