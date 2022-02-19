@@ -1,22 +1,78 @@
 import classes from '../assets/6-pages/Dashboard.module.scss'
 import instagram from '../images/instagram.png'
 import github from '../images/github.png'
-import discord from '../images/discord.png'
+import linkedin from '../images/linkedin.png'
 import cv from '../images/cv.png'
 import hand from '../images/hand-waving.png'
-import React from 'react'
+import React, { useEffect } from 'react';
+import { motion, useAnimation } from "framer-motion"
+import { useInView } from "react-intersection-observer"
 const Dashboard = (props) => {
 
-    const [scrolledDown, setScrolledDown] = React.useState(false);
-    React.useEffect(() => {
-        window.addEventListener('scroll', function (event) {
-            window.scrollY > 75 ? setScrolledDown(true) : setScrolledDown(false);
-        });
-    }, [])
+
+    const scrollToProjects = () => {
+        const projects = document.getElementById('projects-parent');
+        const element = projects.getBoundingClientRect().top + window.scrollY
+        // window.scrollY = window.scrollY + projects.getBoundingClientRect().top
+        window.scroll({
+            top: element,
+            behavior: "smooth"
+        })
+    }
+
+    const controls = useAnimation();
+    const { ref, inView } = useInView();
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top < 800
+        );
+    }
+
+    useEffect(() => {
+        const element = document.getElementById('dashboard');
+        if (isInViewport(element)) {
+            controls.start('visible')
+        }
+        window.addEventListener('scroll', () => {
+            const element = document.getElementById('dashboard');
+            if (isInViewport(element)) {
+                controls.start('visible')
+            }
+        })
+        // deleted
+        // if (!inView) {
+        //     controls.start('hidden')
+        // }
+    }, [controls, inView])
+
+    // const easeOutCubic = (x) => {
+    //     return 1 - Math.pow(1 - x, 3);
+    // }
+
+    const easeOutCubic = (x) => {
+        return 1 - Math.pow(1 - x, 5);
+    }
+
+    const boxVarients = {
+        hidden: { x: `${100}vw`, opacity: .25 },
+        visible: {
+            x: '0vw',
+            opacity: 1,
+            transition: {
+                duration: 1.25,
+                ease: easeOutCubic
+            },
+        },
+    };
 
 
     return (
-        <section className={classes['Dashboard']}>
+        <motion.section id='dashboard' className={classes['Dashboard']}
+            ref={ref}
+            initial="hidden"
+            animate={controls}
+            variants={boxVarients}>
             <div>
                 <div>
                     <img src={hand}></img>
@@ -29,31 +85,27 @@ const Dashboard = (props) => {
             </div>
             <div>
                 <div className={classes['social-button']}>
-                    <button></button>
+                    <a href="https://www.instagram.com/rygaa_dev/" target="_blank"></a>
                     <img src={instagram}></img>
                 </div>
 
                 <div className={classes['social-button']}>
-                    <button></button>
+                    <a href="https://github.com/Rygaa?tab=repositories" target="_blank"></a>
                     <img src={github}></img>
                 </div>
 
                 <div className={classes['social-button']}>
-                    <button></button>
-                    <img src={discord}></img>
+                    <a href="https://www.linkedin.com/in/mohamed-aissa-benfodda-3a151821a/" target="_blank"></a>
+                    <img src={linkedin}></img>
                 </div>
 
                 <div className={classes['social-button']}>
-                    <button></button>
+                    <a href="https://docs.google.com/document/d/e/2PACX-1vTwVrlmYRCF_cTUogGAQYK8GzL0dIXp9FIcWTK_Rs48DFQWr6JGSxTFZsA08uH4YZ6mGb1tkz2-Z05Y/pub" target="_blank"></a>
                     <img src={cv}></img>
                 </div>
             </div>
-            <button>View Projects</button>
-            {!scrolledDown && <div className={classes['scroll-down-container']}>
-                <p>Scroll down</p>
-                <p>||</p>
-            </div>}
-        </section>
+            <button onClick={scrollToProjects}>View Projects</button>
+        </motion.section>
     )
 }
 

@@ -12,7 +12,9 @@ const Output = (props) => {
             if (counter != props.txt.length - 1) {
                 clearInterval(timer);
                 const interval = setInterval(() => {
-                    if (!props.pause)
+                    const element = document.getElementById(props.parent)
+
+                    if (!props.pause && isInViewport(element))
                         setCounter(counter => counter + 1)
                 }, 50)
                 setTimer(interval);
@@ -25,7 +27,7 @@ const Output = (props) => {
     useEffect(() => {
         if (!props.done) {
             if (props.txt == 'Front-end: React') {
-                console.log(counter)
+                // console.log(counter)
             }
             if (counter == props.txt.length) {
                 clearInterval(timer)
@@ -45,9 +47,19 @@ const Output = (props) => {
     }, [])
 
 
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+
     return (
-        <div className = {classes['Output']}>
-            <p>{(counter == 0) && !props.done ? '' : text}</p>
+        <div className = {classes['Output']} >
+            <p style={props.style}>{(counter == 0) && !props.done ? '' : text}</p>
         </div>
     )
     

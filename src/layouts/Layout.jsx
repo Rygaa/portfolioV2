@@ -4,10 +4,18 @@ import Dashboard from '../pages/Dashboard'
 import Projects from '../pages/Projects'
 import AboutMe from '../pages/AboutMe'
 import Contact from '../pages/Contact'
+import React from 'react';
 const Layout = (props) => {
+    const [scrolledDown, setScrolledDown] = React.useState(false);
+
+    React.useEffect(() => {
+        window.addEventListener('scroll', function (event) {
+            if (window.scrollY > 75) setScrolledDown(true);
+        });
+    }, [])
     return (
         <div className={classes['Layout']}>
-            <Section  ><Dashboard></Dashboard></Section>
+            <Section ><Dashboard></Dashboard></Section>
             <Section ><Projects></Projects></Section>
             <Section ><AboutMe></AboutMe></Section>
             <Section ><Contact></Contact></Section>
@@ -20,6 +28,10 @@ const Layout = (props) => {
             </div>
 
             <div className={classes['blob1']}></div>
+            {!scrolledDown && <div className={classes['scroll-down-container']}>
+                <p>Scroll down</p>
+                <p>||</p>
+            </div>}
         </div>
     )
 }

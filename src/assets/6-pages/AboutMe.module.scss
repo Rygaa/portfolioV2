@@ -9,8 +9,6 @@
     grid-template-rows: min-content min-content min-content min-content min-content auto;
     z-index: 2;
     width: min(50rem, 90%);
-    
-
 
 }
 
@@ -18,12 +16,13 @@
 
 
 .AboutMe > p:nth-child(2) { @include fontTitle1(); font-weight: normal; margin-bottom: .5rem; }
-.AboutMe > p:nth-child(3) { @include fontSubTitle1(); margin-bottom: 1.25rem; }
-.AboutMe > p:nth-child(5) { @include fontSubTitle1(); margin-top: 3rem; margin-bottom: 4rem; }
+.AboutMe > p:nth-child(3) { @include fontSubTitle1(); margin-bottom: .5rem; }
+.AboutMe > p:nth-child(5) { @include fontSubTitle1(); margin-top: .5rem; margin-bottom: 3rem; }
 .line {
     background-color: $color2;
     width: 65%;
     height: 1.25px;
+    
 }
 .Console {
     display: flex;
@@ -32,10 +31,57 @@
     @include fontSubTitle2();
     font-weight: normal;
     border-radius: 10px;
-    padding-left: 2rem;
     padding-top: 1rem;
     margin-bottom: 3rem;
     height: 20rem;
+    max-height: 20rem;
+
     // margin-bottom: 2.5rem;
     // margin-top: 2.5rem;
+
+
+    
+}
+
+.line {
+    background-color: $color2;
+    width: 90%;
+    height: 1.25px;
+    justify-self: center;
+    align-self: center;
+    margin-bottom: 1.5rem;
+    margin-top: 1.75rem;
+}
+
+.text-container {
+    margin-left: 3rem;
+    overflow-y: auto;
+    margin-right: 1.75rem;
+    height: 15rem;
+    max-height: 15rem;
+
+    &::-webkit-scrollbar {
+        background-color: $color3;
+        width: .5rem;
+    }
+    &::-webkit-scrollbar-thumb, &::-webkit-scrollbar-track {
+        background-color: $uColor1;
+        border-radius: 50px;
+    }
+    p {
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+}
+
+.brain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    > img {
+        display: block;
+        object-fit: contain;
+        transition: .5s;
+    }
 }
