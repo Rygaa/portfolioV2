@@ -66,6 +66,7 @@ const skilsIMG = [
 const AboutMe = (props) => {
     const [currentOutput, setCurrentOutput] = React.useState(0)
     const [skills, setSkills] = React.useState([])
+    const [brainVisible, setBrainVisible] = React.useState(window.innerWidth > 1500 ? true : false);
 
     const updateOutputPauseStatus = (e) => {
         triggerNewSkill();
@@ -112,10 +113,12 @@ const AboutMe = (props) => {
         const brainDimension = brainRef.current.getBoundingClientRect();
         const x = (position.left + dimension.width) - (brainDimension.width / 2)
         const y = (position.top - brainDimension.height / 2)
-        brainRef.current.style.left = x + 'px';
-        brainRef.current.style.top = y + 'px';
+        // brainRef.current.style.left = x + 'px';
+        // brainRef.current.style.top = y + 'px';
+        brainRef.current.style.right = 0 + 'px';
 
         const position1 = getOffset(brainRef.current.children[0])
+        console.log(position1)
         return position1;
     }
     const [brainPosition, setBrainPosition] = React.useState();
@@ -125,10 +128,11 @@ const AboutMe = (props) => {
     // }, [brainSize])
 
     React.useEffect(() => {
-        setBrainPosition(getBrainPosition)
+        setBrainPosition(getBrainPosition())
         setBrainDimension(brainRef.current.children[0].getBoundingClientRect())
         window.addEventListener('resize', () => {
             getBrainPosition();
+            setBrainVisible(window.innerWidth > 1500 ? true : false);
         })
     }, [])
 
@@ -157,15 +161,25 @@ const AboutMe = (props) => {
     })
 
 
-
     const controls = useAnimation();
     const { ref, inView } = useInView();
 
     function isInViewport(element) {
-        const rect = element.getBoundingClientRect();
-        return (
-            rect.top < 800
-        );
+        var element = document.getElementById('about-me');
+        var position = element?.getBoundingClientRect();
+
+        // checking whether fully visible
+        if (position.top >= 0 && position.bottom <= window.innerHeight) {
+            // console.log('Element is fully visible in screen');
+            return true;
+        }
+
+        // checking for partial visibility
+        if (position.top < window.innerHeight && position.bottom >= 0) {
+            // console.log('Element is partially visible in screen');
+            return true;
+        }
+        return false;
     }
 
     useEffect(() => {
@@ -202,8 +216,9 @@ const AboutMe = (props) => {
     };
 
 
+
     return (
-        <motion.div ref={ref} id={'about-me'} className={classes['AboutMe']}
+        <motion.div ref={ref} className={classes['AboutMe']}
             initial="hidden"
             animate={controls}
             variants={boxVarients}
@@ -218,13 +233,15 @@ const AboutMe = (props) => {
                 learning pushed me to learn web-dev <br />
             </p>
             <div ref={consoleRef} className={classes['Console']}
-                id={'about-me'}>
+                id={'about-me'}
+
+                >
                 <div className={classes['line']} />
                 <div className={classes['text-container']}>
                     {outputs}
                 </div>
-                <div style={{ zIndex: '2', pointerEvents: 'none', transformOrigin: '0 0', position: 'absolute', width: `${500}px`, height: `${500}px`}} ref={brainRef} className={classes['brain']}>
-                    <img ref={brainImgRef} style={{width: '50px', height: '50px'}} src={BrainIMG} /> 
+                <div ref={brainRef} className={classes['brain']}>
+                    <img ref={brainImgRef} style={brainVisible ? {display: 'flex'} : {display: 'none'}} src={BrainIMG}  /> 
                 </div>
                 {skillsList} 
                 

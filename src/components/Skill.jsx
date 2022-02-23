@@ -11,10 +11,13 @@ function getOffset(el) {
     };
 }
 
+
+
 const Skill = (props) => {
     const myRef = React.useRef();
     const [removed, setRemoved] = React.useState();
     const [loadFinish, setLoadFinish] = React.useState(false);
+    const [skillVisible, setSkillVisible] = React.useState(window.innerWidth > 1500 ? true : false);
 
     React.useEffect(() => {
         setLoadFinish(true);
@@ -22,16 +25,28 @@ const Skill = (props) => {
         setInterval(() => {
             const myPosition = getOffset(myRef.current.children[0]);
             const myRight = myRef.current.children[0].style.right.split('p')[0];
-            // const speed = (myPosition.right - props.position.right) / (props.speed * 10)
-            const speed = (myPosition.right - props.position.right) / 10
-            if (myPosition.left > props.position.left + 100)
-                myRef.current.children[0].style.right = (parseInt(myRight) + (10)) + 'px';
-            else {
-                myRef.current.remove();
-                setRemoved(true);
+            const myLeft = myRef.current.children[0].style.left.split('p')[0];
+            if (window.innerWidth > 1500) {
+                if (myPosition.left > props.position.left + 100)
+                    myRef.current.children[0].style.right = (parseInt(myRight) + (10)) + 'px';
+                else {
+                    myRef.current.remove();
+                    setRemoved(true);
+                }
+            } else {
+                if (myPosition.left < props.position.left - 50)
+                    myRef.current.children[0].style.left = (parseInt(myLeft) + (10)) + 'px';
+                else {
+                    myRef.current.remove();
+                    setRemoved(true);
+                }
             }
+     
         }, 20)
         const myPosition = getOffset(myRef.current.children[0]);
+        window.addEventListener('resize', () => {
+            setSkillVisible(window.innerWidth > 1500 ? true : false);
+        })
     }, [])
 
     React.useEffect(() => {
@@ -41,11 +56,25 @@ const Skill = (props) => {
     }, [removed])
 
 
+    const style = {
+        visibility: `${loadFinish ? 'visible' : 'hidden'}`,
+        position: 'absolute',
 
+        fontSize: '3.5rem',
+        color: 'rgba(39, 172.5, 234, 1)'
+    }
+
+    if (window.innerWidth > 1500) {
+        style.right = '50px';
+        style.display = 'block'
+    } else {
+        style.left = '50px'
+        style.display = 'none'
+    }
 
     return (
         <div ref={myRef}>
-            <div style={{ visibility: `${loadFinish ? 'visible' : 'hidden'}`, right: '50px', position: 'absolute', width: '100px', height: '100px', fontSize: '3.5rem', color: 'rgba(39, 172.5, 234, 1)' }} class={props.image} />
+            <div style={style} class={props.image} />
         </div>
     )
 }

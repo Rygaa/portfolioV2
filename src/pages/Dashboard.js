@@ -51,14 +51,13 @@ const Dashboard = (props) => {
     // }
 
     const easeOutCubic = (x) => {
-        return 1 - Math.pow(1 - x, 5);
+        return 1 - Math.pow(1 - x, 2.5);
     }
 
     const boxVarients = {
-        hidden: { x: `${100}vw`, opacity: .25 },
+        hidden: { x: `100vw` },
         visible: {
             x: '0vw',
-            opacity: 1,
             transition: {
                 duration: 1.25,
                 ease: easeOutCubic
