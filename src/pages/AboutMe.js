@@ -6,7 +6,6 @@ import React, { useEffect } from "react";
 import BrainIMG from '../images/brain.png'
 import REACT_IMG from '../images/react.png'
 import react from 'react';
-import Skill from '../components/Skill';
 import { motion, useAnimation } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 
@@ -36,41 +35,15 @@ const skillsText =  [
     'SCSS',
     'GraphQL',
 ]
-const skilsIMG = [
-    "",
 
-    "devicon-cplusplus-plain",
-    "devicon-javascript-plain",
-    "devicon-nodejs-plain-wordmark",
-
-    "devicon-react-original",
-    "devicon-react-original",
-    "devicon-electron-original",
-
-    "devicon-figma-plain",
-    "devicon-html5-plain",
-    "devicon-css3-plain",
-
-    "devicon-mongodb-plain",
-    "devicon-postgresql-plain",
-    "devicon-raspberrypi-line",
-
-    "devicon-socketio-original",
-    "devicon-express-original",
-    "devicon-java-plain",
-
-    "devicon-raspberrypi-line",
-    "devicon-graphql-plain-wordmark",
-]
 
 const AboutMe = (props) => {
     const [currentOutput, setCurrentOutput] = React.useState(0)
-    const [skills, setSkills] = React.useState([])
     const [brainVisible, setBrainVisible] = React.useState(window.innerWidth > 1500 ? true : false);
 
     const updateOutputPauseStatus = (e) => {
-        triggerNewSkill();
         setCurrentOutput(currentOutput + 1)
+        updateBrainSize();
     }
 
     const updateBrainSize = (value) => {
@@ -113,25 +86,19 @@ const AboutMe = (props) => {
         const brainDimension = brainRef.current.getBoundingClientRect();
         const x = (position.left + dimension.width) - (brainDimension.width / 2)
         const y = (position.top - brainDimension.height / 2)
-        // brainRef.current.style.left = x + 'px';
-        // brainRef.current.style.top = y + 'px';
         brainRef.current.style.right = 0 + 'px';
+        brainRef.current.style.top = -25 + 'px';
 
         const position1 = getOffset(brainRef.current.children[0])
         console.log(position1)
         return position1;
     }
-    const [brainPosition, setBrainPosition] = React.useState();
-    const [brainDimension, setBrainDimension] = React.useState();
-    // React.useEffect(() => {
-    //     brainImgRef.current.style.transform = `scale(${brainSize}, ${brainSize})`
-    // }, [brainSize])
+
+
 
     React.useEffect(() => {
-        setBrainPosition(getBrainPosition())
-        setBrainDimension(brainRef.current.children[0].getBoundingClientRect())
+        getBrainPosition();
         window.addEventListener('resize', () => {
-            getBrainPosition();
             setBrainVisible(window.innerWidth > 1500 ? true : false);
         })
     }, [])
@@ -139,26 +106,6 @@ const AboutMe = (props) => {
 
 
 
-    const triggerNewSkill = () => {
-        const element = document.getElementById('about-me')
-        const arr = [...skills];
-        arr.push({
-            position: brainPosition,
-            dimension: brainDimension,
-            updateBrainSize: updateBrainSize
-        })
-        setSkills(arr);
-    }
-
-
-    const skillsList = skills.map((element, index) => {
-        // if (index > 1) {
-        //     return null;
-        // }
-        return (
-            <Skill image={skilsIMG[index]} speed={skillsText[index].length} position={element.position} dimension={element.dimension} updateBrainSize={element.updateBrainSize} />
-        )
-    })
 
 
     const controls = useAnimation();
@@ -243,8 +190,6 @@ const AboutMe = (props) => {
                 <div ref={brainRef} className={classes['brain']}>
                     <img ref={brainImgRef} style={brainVisible ? {display: 'flex'} : {display: 'none'}} src={BrainIMG}  /> 
                 </div>
-                {skillsList} 
-                
             </div>
 
            

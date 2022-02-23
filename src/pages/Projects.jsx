@@ -107,11 +107,13 @@ const Projects = (props) => {
             return;
         }
         console.log('called')
-        selectedProject == 2 ? setSelectedProject(0) : setSelectedProject(selectedProject => selectedProject + 1)
+        setSelectedProject(e.activeIndex);
+        // selectedProject == 2 ? setSelectedProject(0) : setSelectedProject(selectedProject => selectedProject + 1)
         setCurrentOutput(0)
     }
 
     React.useEffect(() => {
+        console.log('selectedProject:', selectedProject)
     }, [selectedProject])
 
     const outputs = arr.map((project) => {
