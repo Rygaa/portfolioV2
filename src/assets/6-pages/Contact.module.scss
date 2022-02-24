@@ -109,8 +109,9 @@
     height: 6.25rem;
     // background: linear-gradient(90deg, #0075ff54 0%, #00f0ff54 100%);
     background-color: black;
-    background-image: linear-gradient(to right, rgba(#0075ff54, 40%), rgba(#00f0ff54, 40%), rgba(#0075ff54, 50%));
+    // background-image: linear-gradient(to right, rgba(#0075ff54, 40%), rgba(#00f0ff54, 40%), rgba(#0075ff54, 50%));
     // background-image: linear-gradient(to right, rgba(red, 50%), rgba(blue, 50%), rgba(violet, 50%));
+    background-color: rgba(150, 126, 255, 0.3);
 
     border: none;
     @include fontText2();
@@ -119,7 +120,7 @@
         transition: 0.5s;
 
         background-size: 200% auto;
-        border: 1px solid rgba(0, 229, 255, 0.15);
+        // border: 1px solid rgba(0, 229, 255, 0.15);
 
     &:hover {
         // background: linear-gradient(180deg, rgba(0, 117, 255, 0.33) 0%, rgba(0, 240, 255, 0.33) 100%);

@@ -31,19 +31,28 @@ body::-webkit-scrollbar-track  {
 
 // }
 
-.blob1 {
-    width: 50%;
-    height: 75%;
-    position: absolute;
-    top: calc(25% / 2);
-    right: 25%;
-    background-color: rgba(47, 255, 0, .35);
-    filter: blur(200px);
-    animation: AnimationName2 5s linear infinite backwards;
-    animation-fill-mode: backwards;
-    animation-direction: alternate;
-}   
+// .blob1 {
+//     width: 50%;
+//     height: 75%;
+//     position: absolute;
+//     top: calc(25% / 2);
+//     right: 25%;
+//     background-color: rgba(47, 255, 0, .35);
+//     filter: blur(200px);
+//     animation: AnimationName2 5s linear infinite backwards;
+//     animation-fill-mode: backwards;
+//     animation-direction: alternate;
+// }   
 
+.blob1 {
+    position: fixed;
+    background-image: url('../../images/p8eoav.jpg');
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    animation: AnimationName1 100s linear infinite forwards;
+    opacity: .25;
+}
 .Layout {
     width: 100%;
     height: 400%;
@@ -89,10 +98,15 @@ body::-webkit-scrollbar-track  {
     grid-template-rows: 25% 25% 25% 25%;
     z-index: 2;
     // background-color: rgba(#00C2FF, 10%);
-    > div:nth-child(1) {background-color: rgba(#00C2FF, 10%);}
-    > div:nth-child(2) {background-color: rgba(#00C2FF, 25%);}
-    > div:nth-child(3) {background-color: rgba(#00C2FF, 10%);}
-    > div:nth-child(4) {background-color: rgba(#00C2FF, 25%);}
+    // > div:nth-child(1) {background-color: rgba(#00C2FF, 15%);}
+    // > div:nth-child(2) {background-color: rgba(#00C2FF, 20%);}
+    // > div:nth-child(3) {background-color: rgba(#00C2FF, 15%);}
+    // > div:nth-child(4) {background-color: rgba(#00C2FF, 20%);}
+
+    > div:nth-child(1) {background-color: rgba(#8d1414, 15%);}
+    > div:nth-child(2) {background-color: rgba(#440202, 15%);}
+    > div:nth-child(3) {background-color: rgba(#8d1414, 15%);}
+    > div:nth-child(4) {background-color: rgba(#440202, 15%);}
 }
 
 
