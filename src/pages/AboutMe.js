@@ -1,6 +1,6 @@
 import classes from '../assets/6-pages/AboutMe.module.scss'
 import Title from '../components/Title';
-import aboutMeTitle from '../images/about-me-title-logo.png'
+import aboutMeTitle from '../images/about-me-title-logo.svg'
 import Output from '../components/Output'
 import React, { useEffect } from "react";
 import BrainIMG from '../images/brain.png'
