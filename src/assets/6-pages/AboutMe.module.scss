@@ -62,6 +62,9 @@
     margin-right: 1.75rem;
     height: 15rem;
     max-height: 15rem;
+    scrollbar-color: rgba(0, 191, 255, 0.35) rgba(0, 132, 255, 0.35); 
+
+    scrollbar-width: thin;
 
     &::-webkit-scrollbar {
         background-color: $color3;

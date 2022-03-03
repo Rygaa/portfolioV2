@@ -7,6 +7,8 @@ html, body {
     margin: 0;
     background-color: black;
     user-select: none;
+    scrollbar-color: rgba(0, 191, 255, 0.55) rgba(0, 132, 255, 0.52); 
+    scrollbar-width: thin;
 }
 
 body::-webkit-scrollbar {

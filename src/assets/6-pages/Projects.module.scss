@@ -69,6 +69,8 @@
     grid-template-rows: min-content auto min-content min-content;
     overflow: hidden;
     height: calc(100% + 5rem);
+
+
     .line {
         background-color: $color2;
         width: 90%;
@@ -88,7 +90,8 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
-
+    scrollbar-color: rgba(0, 191, 255, 0.35) rgba(0, 132, 255, 0.35); 
+    scrollbar-width: thin;
     &::-webkit-scrollbar {
         background-color: $color3;
         width: .5rem;
