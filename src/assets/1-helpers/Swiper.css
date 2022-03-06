@@ -8,6 +8,7 @@
     width: 2rem !important;
     height: .45rem !important;
     border-radius: unset !important;
+    bottom: 0px !important;
 }
 
 .swiper-button-next, .swiper-button-prev {

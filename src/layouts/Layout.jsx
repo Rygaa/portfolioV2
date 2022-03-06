@@ -5,6 +5,8 @@ import Projects from '../pages/Projects'
 import AboutMe from '../pages/AboutMe'
 import Contact from '../pages/Contact'
 import React from 'react';
+import Toasty from '../components/Toasty';
+
 const Layout = (props) => {
     const [scrolledDown, setScrolledDown] = React.useState(false);
 
@@ -32,6 +34,7 @@ const Layout = (props) => {
                 <p>Scroll down</p>
                 <p>||</p>
             </div>}
+            <Toasty />
         </div>
     )
 }

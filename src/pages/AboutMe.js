@@ -50,21 +50,24 @@ const AboutMe = (props) => {
         brainImgRef.current.style.transform = `scale(${1 + currentOutput / 5}, ${1 + currentOutput / 5})`
     }
     const outputs = skillsText.map((skill, index) => {
-        return (<Output
-            parent="about-me"
-            key={Math.random()} txt={skill}
-            pause={index == currentOutput ? false : true}
-            updateOutputPauseStatus={updateOutputPauseStatus}
-            done={index < currentOutput}
-            style={index == 0 ? {margin: 0, padding: 0} : { marginLeft: '2rem', fontSize: '1.05rem'}}
-            inStartAddText={''}
-        />)
+        return (<p>
+            {skill}
+        </p>)
+        // return (<Output
+        //     parent="about-me"
+        //     key={Math.random()} txt={skill}
+        //     pause={index == currentOutput ? false : true}
+        //     updateOutputPauseStatus={updateOutputPauseStatus}
+        //     done={index < currentOutput}
+        //     style={index == 0 ? {margin: 0, padding: 0} : { marginLeft: '2rem', fontSize: '1.05rem'}}
+        //     inStartAddText={''}
+        // />)
     })
 
     useEffect(() => {
         setTimeout(() => {
             consoleRef.current.children[1].scrollTop = consoleRef.current.children[1].scrollHeight;
-        }, 50) 
+        }, 40) 
 
     }, [currentOutput])
 

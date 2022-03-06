@@ -16,7 +16,7 @@ const Output = (props) => {
 
                     if (!props.pause && isInViewport(element))
                         setCounter(counter => counter + 1)
-                }, 50)
+                }, 40)
                 setTimer(interval);
             }
 

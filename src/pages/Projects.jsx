@@ -118,13 +118,16 @@ const Projects = (props) => {
 
     const outputs = arr.map((project) => {
         return project.usedTech.map((text, index) => {
-            return (<Output
-                parent={'projects'}
-                key={Math.random()} txt={text}
-                pause={index == currentOutput ? false : true}
-                updateOutputPauseStatus={updateOutputPauseStatus}
-                done={index < currentOutput}
-            />)
+            return (<p>
+                {text}
+            </p>)
+            // return (<Output
+            //     parent={'projects'}
+            //     key={Math.random()} txt={text}
+            //     pause={index == currentOutput ? false : true}
+            //     updateOutputPauseStatus={updateOutputPauseStatus}
+            //     done={index < currentOutput}
+            // />)
         })
     })
 
@@ -150,7 +153,7 @@ const Projects = (props) => {
     useEffect(() => {
         setTimeout(() => {
             consoleRef.current.children[1].scrollTop = consoleRef.current.children[1].scrollHeight;
-        }, 50)
+        }, 40)
 
     }, [currentOutput])
     useEffect(() => {
@@ -201,8 +204,8 @@ const Projects = (props) => {
                 spaceBetween={30} hashNavigation={{
                     "watchState": true
                 }} pagination={{
-                    "clickable": true
-                }} navigation={true} className={classes['Swiper']}
+                    "clickable": true,
+                }} allowTouchMove="true" navigation={true} className={classes['Swiper']}
                 onTransitionEnd={updateSelectedProject}>
                 <SwiperSlide className={classes['Swiper-Slide']} data-hash="slide1"><img src={hanasu1IMG}></img><div></div></SwiperSlide>
                 <SwiperSlide className={classes['Swiper-Slide']} data-hash="slide1"><img src={medtuto1IMG}></img><div></div></SwiperSlide>
@@ -217,8 +220,8 @@ const Projects = (props) => {
                     {outputs[selectedProject]}
                 </div>
                 <div className={classes['buttons-container']}>
-                    <button className={classes['view-github-button']} onClick={viewWebsite}>View Projects</button>
-                    <button className={classes['view-website-button']} onClick={viewGithub}>View Github</button>
+                    <a className={classes['view-github-button']} href={arr[selectedProject].website}>View Projects</a>
+                    <a className={classes['view-website-button']} href={arr[selectedProject].github}>View Github</a>
                 </div>
 
             </div>
