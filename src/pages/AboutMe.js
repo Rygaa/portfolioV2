@@ -47,8 +47,20 @@ const AboutMe = (props) => {
     }
 
     const updateBrainSize = (value) => {
-        brainImgRef.current.style.transform = `scale(${1 + currentOutput / 5}, ${1 + currentOutput / 5})`
+        brainImgRef.current.style.transform = `scale(${1 + value / 5}, ${1 + value / 5})`
     }
+
+    useEffect(() => {
+        for (let i = 0; i < skillsText.length; i++) {
+            setTimeout(() => {
+                updateBrainSize(i)
+            }, 500 * i)
+        }
+
+
+    }, [])
+
+
     const outputs = skillsText.map((skill, index) => {
         return (<p>
             {skill}
