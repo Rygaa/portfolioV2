@@ -99,7 +99,7 @@ const Dashboard = (props) => {
                 </div>
 
                 <div className={classes['social-button']}>
-                    <a href="https://docs.google.com/document/d/e/2PACX-1vTwVrlmYRCF_cTUogGAQYK8GzL0dIXp9FIcWTK_Rs48DFQWr6JGSxTFZsA08uH4YZ6mGb1tkz2-Z05Y/pub" target="_blank"></a>
+                    <a href="https://docs.google.com/document/d/e/2PACX-1vQpyqo9btNfOGfALAqI9BQqzuSxP6cw0wLpX-RfpqXJ3sswVZYviYCu-GCj_hSJ9t5cBjqJrMKUYw_o/pub" target="_blank"></a>
                     <img src={cv}></img>
                 </div>
             </div>
