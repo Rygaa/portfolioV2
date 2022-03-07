@@ -17,8 +17,6 @@ const skillsText =  [
     'NodeJS',
 
     'React',
-    'React-native',
-    'Electron',
 
     'Figma',
     'HTML',
@@ -33,7 +31,7 @@ const skillsText =  [
     'Java',
 
     'SCSS',
-    'GraphQL',
+    'Nginx',
 ]
 
 
