@@ -86,9 +86,9 @@ const maktaba = {
 }
 
 const arr = []
-arr.push(hanasu)
 arr.push(medtuto)
 arr.push(maktaba)
+arr.push(hanasu)
 
 
 const Projects = (props) => {
