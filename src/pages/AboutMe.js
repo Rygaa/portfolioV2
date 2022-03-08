@@ -76,7 +76,7 @@ const AboutMe = (props) => {
 
     useEffect(() => {
         setTimeout(() => {
-            consoleRef.current.children[1].scrollTop = consoleRef.current.children[1].scrollHeight;
+            // consoleRef.current.children[1].scrollTop = consoleRef.current.children[1].scrollHeight;
         }, 40) 
 
     }, [currentOutput])

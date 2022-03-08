@@ -21,23 +21,6 @@ import { useInView } from "react-intersection-observer"
 
 SwiperCore.use([Pagination, Navigation]);
 
-const hanasu = {
-    title: 'Hanasu',
-    image: hanasu1IMG,
-    website: 'https://hanasu.me/Login',
-    github: 'https://github.com/Rygaa/hanasu-react-frontend',
-    usedTech: [
-        'Front-end: React',
-        'Designed: Figma',
-        'Database: MongoDB',
-        'NPMS:',
-        '.React',
-        '.Socket.io.',
-        '.React-Redux',
-        '.Axios',
-        '.Sass',
-    ]
-}
 
 const medtuto = {
     title: 'Medtuto',
@@ -84,6 +67,25 @@ const maktaba = {
         '.classnames',
     ]
 }
+
+const hanasu = {
+    title: 'Hanasu',
+    image: hanasu1IMG,
+    website: 'https://hanasu.me/Login',
+    github: 'https://github.com/Rygaa/hanasu-react-frontend',
+    usedTech: [
+        'Front-end: React',
+        'Designed: Figma',
+        'Database: MongoDB',
+        'NPMS:',
+        '.React',
+        '.Socket.io.',
+        '.React-Redux',
+        '.Axios',
+        '.Sass',
+    ]
+}
+
 
 const arr = []
 arr.push(medtuto)
@@ -152,7 +154,7 @@ const Projects = (props) => {
 
     useEffect(() => {
         setTimeout(() => {
-            consoleRef.current.children[1].scrollTop = consoleRef.current.children[1].scrollHeight;
+            // consoleRef.current.children[1].scrollTop = consoleRef.current.children[1].scrollHeight;
         }, 40)
 
     }, [currentOutput])
@@ -207,9 +209,9 @@ const Projects = (props) => {
                     "clickable": true,
                 }} allowTouchMove="true" navigation={true} className={classes['Swiper']}
                 onTransitionEnd={updateSelectedProject}>
-                <SwiperSlide className={classes['Swiper-Slide']} data-hash="slide1"><img src={hanasu1IMG}></img><div></div></SwiperSlide>
                 <SwiperSlide className={classes['Swiper-Slide']} data-hash="slide1"><img src={medtuto1IMG}></img><div></div></SwiperSlide>
                 <SwiperSlide className={classes['Swiper-Slide']} data-hash="slide1"><img src={maktaba1IMG}></img><div></div></SwiperSlide>
+                <SwiperSlide className={classes['Swiper-Slide']} data-hash="slide1"><img src={hanasu1IMG}></img><div></div></SwiperSlide>
             </Swiper>
             <div className={classes['Console']}
                 id="projects"
