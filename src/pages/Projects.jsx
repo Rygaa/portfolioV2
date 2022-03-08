@@ -25,7 +25,7 @@ const hanasu = {
     title: 'Hanasu',
     image: hanasu1IMG,
     website: 'https://hanasu.me/Login',
-    github: 'https://medtuto.com/',
+    github: 'https://github.com/Rygaa/hanasu-react-frontend',
     usedTech: [
         'Front-end: React',
         'Designed: Figma',
@@ -43,7 +43,7 @@ const medtuto = {
     title: 'Medtuto',
     image: medtuto1IMG,
     website: 'https://medtuto.com/',
-    github: 'https://medtuto.com/',
+    github: 'https://github.com/Rygaa/medtuto-react-frontend',
     usedTech: [
         'Front-end: React',
         'Designed: Figma',
@@ -63,10 +63,10 @@ const medtuto = {
 }
 
 const maktaba = {
-    title: 'Maktaba',
+    title: 'Molahada',
     image: maktaba1IMG,
-    website: '',
-    github: 'https://medtuto.com/',
+    website: 'https://molahada.com/login',
+    github: 'https://github.com/Rygaa/molahada-frontend-reactjs',
     usedTech: [
         'Front-end: React',
         'Designed: Figma',
