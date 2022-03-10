@@ -28,6 +28,8 @@ const medtuto = {
     website: 'https://medtuto.com/',
     github: 'https://github.com/Rygaa/medtuto-react-frontend',
     usedTech: [
+        'MedTuto, a tutoring web app.',
+        'Become a tutor and post videos on selected subjects.',
         'Front-end: React',
         'Designed: Figma',
         'Database: MongoDB',
@@ -51,6 +53,8 @@ const maktaba = {
     website: 'https://molahada.com/login',
     github: 'https://github.com/Rygaa/molahada-frontend-reactjs',
     usedTech: [
+        'Molahada, a chat room web app.',
+        'Stock information and search them by tags.',
         'Front-end: React',
         'Designed: Figma',
         'Database: PostgreSQL',
@@ -74,6 +78,8 @@ const hanasu = {
     website: 'https://hanasu.me/Login',
     github: 'https://github.com/Rygaa/hanasu-react-frontend',
     usedTech: [
+        'Hanasu, a chat room web app.',
+        'Real-time massaging using Socket.IO.',
         'Front-end: React',
         'Designed: Figma',
         'Database: MongoDB',

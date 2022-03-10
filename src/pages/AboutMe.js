@@ -184,7 +184,7 @@ const AboutMe = (props) => {
             variants={boxVarients}
         >
             <Title title={'About me'} image={aboutMeTitle}></Title>
-            <p>Mohamed Aissa Benfodda</p>
+            <p>Aissa Benfodda</p>
             <p>Location: Montreal, QC, Canada</p>
             <div className={classes['line']}></div>
             <p>I am a full-stack web-developer. I was <br />

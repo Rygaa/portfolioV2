@@ -75,7 +75,7 @@ const Dashboard = (props) => {
             <div>
                 <div>
                     <img src={hand}></img>
-                    <div><p>Hello, I am</p><p>Rygaa</p></div>
+                    <div><p>Hello, I am</p><p>Aissa</p></div>
                 </div>
                 <div>
                     <p>Welcome to</p>
@@ -99,7 +99,7 @@ const Dashboard = (props) => {
                 </div>
 
                 <div className={classes['social-button']}>
-                    <a href="https://docs.google.com/document/d/e/2PACX-1vQpyqo9btNfOGfALAqI9BQqzuSxP6cw0wLpX-RfpqXJ3sswVZYviYCu-GCj_hSJ9t5cBjqJrMKUYw_o/pub" target="_blank"></a>
+                    <a href="https://docdro.id/skk2a9m" target="_blank"></a>
                     <img src={cv}></img>
                 </div>
             </div>
