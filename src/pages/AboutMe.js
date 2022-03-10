@@ -187,10 +187,11 @@ const AboutMe = (props) => {
             <p>Aissa Benfodda</p>
             <p>Location: Montreal, QC, Canada</p>
             <div className={classes['line']}></div>
-            <p>I am a full-stack web-developer. I was <br />
-                introduced to the software development <br />
-                in the game-dev industry. The desire of <br />
-                learning pushed me to learn web-dev <br />
+            <p className={classes['description']}>I am a full-stack web-developer. With more than
+                <br />  2 years experience building full stack web applications 
+                <br /> Using HTML/CSS/Javascript/React. And more than
+                <br /> 3 years experience building backend using NodeJS
+                <br />  along with REST-APIS and Socket.IO
             </p>
             <div ref={consoleRef} className={classes['Console']}
                 id={'about-me'}

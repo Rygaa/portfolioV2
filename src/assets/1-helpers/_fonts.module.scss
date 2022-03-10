@@ -27,7 +27,17 @@
 
 }
 
+@mixin fontSubTitle0 {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.353rem;
+    line-height: 100%;
+    letter-spacing: 0.025em;
+    color: white;
+    @include reset();
 
+}
 @mixin fontSubTitle1 {
     font-family: Raleway;
     font-style: normal;
