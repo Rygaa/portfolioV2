@@ -67,45 +67,57 @@ const Dashboard = (props) => {
 
 
     return (
-        <motion.section id='dashboard' className={classes['Dashboard']}
-            ref={ref}
-            initial="hidden"
-            animate={controls}
-            variants={boxVarients}>
+      <motion.section
+        id="dashboard"
+        className={classes["Dashboard"]}
+        ref={ref}
+        initial="hidden"
+        animate={controls}
+        variants={boxVarients}
+      >
+        <div>
+          <div>
+            <img src={hand}></img>
             <div>
-                <div>
-                    <img src={hand}></img>
-                    <div><p>Hello, I am</p><p>Aissa</p></div>
-                </div>
-                <div>
-                    <p>Welcome to</p>
-                    <p>My portfolio</p>
-                </div>
+              <p>Hello, I am</p>
+              <p>Aissa</p>
             </div>
-            <div>
-                <div className={classes['social-button']}>
-                    <a href="https://www.instagram.com/rygaa_dev/" target="_blank"></a>
-                    <img src={instagram}></img>
-                </div>
+          </div>
+          <div>
+            <p>Welcome to</p>
+            <p>My portfolio</p>
+          </div>
+        </div>
+        <div>
+          <div className={classes["social-button"]}>
+            <a href="https://www.instagram.com/rygaa_dev/" target="_blank"></a>
+            <img src={instagram}></img>
+          </div>
 
-                <div className={classes['social-button']}>
-                    <a href="https://github.com/Rygaa?tab=repositories" target="_blank"></a>
-                    <img src={github}></img>
-                </div>
+          <div className={classes["social-button"]}>
+            <a
+              href="https://github.com/Rygaa?tab=repositories"
+              target="_blank"
+            ></a>
+            <img src={github}></img>
+          </div>
 
-                <div className={classes['social-button']}>
-                    <a href="https://www.linkedin.com/in/mohamed-aissa-benfodda-3a151821a/" target="_blank"></a>
-                    <img src={linkedin}></img>
-                </div>
+          <div className={classes["social-button"]}>
+            <a
+              href="https://www.linkedin.com/in/aissa-b-3a151821a/"
+              target="_blank"
+            ></a>
+            <img src={linkedin}></img>
+          </div>
 
-                <div className={classes['social-button']}>
-                    <a href="https://docdro.id/skk2a9m" target="_blank"></a>
-                    <img src={cv}></img>
-                </div>
-            </div>
-            <button onClick={scrollToProjects}>View Projects</button>
-        </motion.section>
-    )
+          <div className={classes["social-button"]}>
+            <a href="https://docdro.id/gpmkAQR" target="_blank"></a>
+            <img src={cv}></img>
+          </div>
+        </div>
+        <button onClick={scrollToProjects}>View Projects</button>
+      </motion.section>
+    );
 }
 
 
