@@ -13,6 +13,7 @@ const skillsText =  [
     'Skills:',
 
     'Javascript',
+    'Typescript',
     'NodeJS',
     'React',
     'Vue',
