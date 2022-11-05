@@ -12,26 +12,24 @@ import { useInView } from "react-intersection-observer"
 const skillsText =  [
     'Skills:',
 
-    'C++',
     'Javascript',
     'NodeJS',
-
     'React',
-
-    'Figma',
-    'HTML',
-    'CSS',
+    'Vue',
 
     'MongoDB',
     'PostgreSQL',
+    'Nginx',
+    'SocketIO',
+
+    'Figma',
+    'HTML',
+    'CSS / SCSS',
     'MUI',
 
-    'SocketIO',
-    'Express',
     'Java',
-
-    'SCSS',
-    'Nginx',
+    'C++',
+    'Express',
 ]
 
 

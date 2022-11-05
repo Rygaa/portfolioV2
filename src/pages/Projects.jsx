@@ -28,8 +28,8 @@ const medtuto = {
     website: 'https://medicaltutoring.rygaa.com/home',
     github: 'https://github.com/Rygaa/medtuto-react-frontend',
     usedTech: [
-        'MedTuto, a tutoring web app.',
-        'Become a tutor and post videos on selected subjects.',
+        'Medicaltutoring, a tutoring web app.',
+        'Become a tutor and post videos on selected courses.',
         'Front-end: React',
         'Designed: Figma',
         'Database: MongoDB',
