@@ -23,9 +23,9 @@ SwiperCore.use([Pagination, Navigation]);
 
 
 const medtuto = {
-    title: 'Medtuto',
+    title: 'Medical Tutoring',
     image: medtuto1IMG,
-    website: 'https://medtuto.com/',
+    website: 'https://medicaltutoring.rygaa.com/home',
     github: 'https://github.com/Rygaa/medtuto-react-frontend',
     usedTech: [
         'MedTuto, a tutoring web app.',
@@ -50,7 +50,7 @@ const medtuto = {
 const maktaba = {
     title: 'Molahada',
     image: maktaba1IMG,
-    website: 'https://molahada.com/login',
+    website: 'https://molahada.rygaa.com/login',
     github: 'https://github.com/Rygaa/molahada-frontend-reactjs',
     usedTech: [
         'Molahada, a chat room web app.',
@@ -75,7 +75,7 @@ const maktaba = {
 const hanasu = {
     title: 'Hanasu',
     image: hanasu1IMG,
-    website: 'https://hanasu.me/Login',
+    website: 'https://hanasu.rygaa.com/Login',
     github: 'https://github.com/Rygaa/hanasu-react-frontend',
     usedTech: [
         'Hanasu, a chat room web app.',

@@ -44,7 +44,7 @@ const Contact = (props) => {
 
     const sendMail = async () => {
         console.log('sent')
-        const response = await axios.post('https://mail.aissaben.com/send-mail', {
+        const response = await axios.post('https://mailportfolio.rygaa.com/send-mail', {
             email,
             name,
             message
